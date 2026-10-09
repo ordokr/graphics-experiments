@@ -8,7 +8,7 @@ The original repository describes itself as a place to use GitHub like Pastebin.
 The source files come from upstream; this fork adds documentation and navigation
 to help readers understand what is here and where to start.
 
-It is a study collection, not an installable graphics library or a complete app.
+It is a study collection with a local experiment viewer, not an installable graphics library. The viewer builds successfully; browser rendering and the six remaining captures are still unverified.
 The name `ascii` describes one part of it: a shader that draws an image using
 glyphs. The other experiments explore different visual techniques.
 
@@ -29,9 +29,9 @@ content sharing a page.
 |---|---|---|
 | [asciiMaterial.ts](asciiMaterial.ts) | Three.js node material using a glyph atlas, source textures, gradient signals, and optional ramp dithering | Start here to study image-to-glyph rendering in a GPU material. The host must supply textures and uniforms. |
 | [CRTScreenScene.ts](CRTScreenScene.ts) | A configurable CRT-style scene with screen sources and shader effects | Study how screen content and display effects are assembled; external media and host integration are separate concerns. |
-| [BioluminescenceScene.ts](BioluminescenceScene.ts) | Particles, lighting, bloom, and volume effects | Explore how several techniques combine into a luminous scene. Its parameter module is missing. |
-| [PlanetScene.ts](PlanetScene.ts) | Planet rendering with atmospheric scattering controls | Read how atmosphere parameters feed rendering. Its parameter module is missing. |
-| [BoxFroxelPipeline.ts](BoxFroxelPipeline.ts) | A volumetric fog pipeline using a 3D texture | Study a froxel: a cell in a camera-oriented volume grid. External grid constants are missing. |
+| [BioluminescenceScene.ts](BioluminescenceScene.ts) | Particles, lighting, bloom, and volume effects | Explore how several techniques combine into a luminous scene. The viewer supplies reconstructed demo parameters. |
+| [PlanetScene.ts](PlanetScene.ts) | Planet rendering with atmospheric scattering controls | Read how atmosphere parameters feed rendering. The viewer supplies reconstructed demo parameters. |
+| [BoxFroxelPipeline.ts](BoxFroxelPipeline.ts) | A volumetric fog pipeline using a 3D texture | Study a froxel: a cell in a camera-oriented volume grid. The viewer supplies bounded demo grid constants. |
 | [voxelPathfindingWorker.ts](voxelPathfindingWorker.ts) | Worker-based path construction through voxel geometry, including A* | Study grid representation, route search, and transferable result buffers. A host must construct the input grid. |
 | [orl_clean_band_generator.py](orl_clean_band_generator.py) | Seeded geometric layouts with rectangular bands and L-shaped annotation regions | Explore main text surrounded by glosses, sources, references, and editorial apparatus; exports PNG, SVG, and JSON. |
 
@@ -50,8 +50,8 @@ See the [capture and reproduction notes](docs/previews/README.md),
 [layout data](docs/previews/orl-layouts.json).
 
 The other six experiments do not yet have verified captures in this fork.
-The graphics snippets need a browser host (and several need missing modules);
-the pathfinding worker needs a host and a visualization. No substitute images
+A local browser host and reconstructed inputs are now supplied, but still need
+visual verification in a supported browser. No substitute images
 are presented as screenshots of those implementations.
 
 ## Start here
@@ -60,16 +60,35 @@ are presented as screenshots of those implementations.
 2. Read the [integration notes](docs/INTEGRATION.md) for its dependencies and missing pieces.
 3. Resolve permissions before incorporating source into another project.
 
-There is no `package.json`, pinned Three.js version, browser entry point, or
-complete scene dependency tree in this snapshot. A fresh clone therefore has no
-supported `npm install` / `npm run dev` workflow. The Python generator also has
-external dependencies and a fixed output path, documented in the notes.
+## Run the local viewer
+
+Node.js 22.12+ or a compatible later release:
+
+```sh
+npm ci
+npm test
+npm run build
+npm run dev
+```
+
+Open http://127.0.0.1:5188/ and choose an experiment. The host uses Three.js
+0.186.1 and Vite 8.3.4 with a committed lockfile. Froxel compute requires WebGPU.
+The viewer reports initialization errors rather than substituting another image.
+CRT uses its internal Julia shader; keyboard, ROM, and DOS loading are disabled.
+Planet and bioluminescence presets and fog constants are newly reconstructed demo
+inputs, not recovered upstream assets. The viewer uses a fixed rendering size;
+responsive resizing and browser/GPU compatibility remain to be qualified.
+
+The Python generator is independent of npm and has external dependencies and a
+fixed output path; see the reproduction notes.
 
 ## What this fork adds
 
 - A plain-language map of the experiments and their practical uses.
 - An integration checklist that distinguishes source snippets from runnable demos.
 - Explicit upstream attribution and an honest account of the collection's limits.
+- A local viewer, pinned dependencies, reconstructed demo inputs, and focused tests.
+  Its successful build does not establish visual correctness.
 
 The rendering and pathfinding implementations remain upstream work. No visual,
 performance, or production-readiness claims are made by these documentation changes.

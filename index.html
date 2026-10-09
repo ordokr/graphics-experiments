@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ascii — experiment viewer</title>
+<style>
+  :root{color-scheme:dark;font-family:system-ui;background:#10131b;color:#ebedf5}
+  body{margin:0 auto;max-width:1200px;padding:24px} header{display:flex;justify-content:space-between;gap:20px;align-items:center}
+  h1{margin:0} a{color:#8ccef3} nav{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+  nav a{padding:9px 14px;border:1px solid #3d485b;border-radius:8px;text-decoration:none}
+  nav a[aria-current=page]{background:#28415b} canvas{width:100%;height:650px;display:block;background:#05070b;border-radius:12px}
+  #status{padding:12px 0;white-space:pre-wrap} #status[data-state=error]{color:#ffaca8}
+  .note{color:#aeb8c8;line-height:1.6} img{max-width:100%}
+</style>
+<header><h1>ascii / experiments</h1><a href="https://github.com/sponsors/ordokr">Support Tim V's work</a></header>
+<p class="note">Retained implementations from <a href="https://github.com/ngwnos/files">ngwnos/files</a> with new demo inputs and a host by Tim V. Reconstructed presets are labeled; a successful build alone does not verify rendering.</p>
+<nav id="navigation"></nav>
+<h2 id="title"></h2><p id="description" class="note"></p>
+<div id="status" role="status" data-state="loading">Starting…</div>
+<canvas id="view" width="1100" height="650"></canvas>
+<div id="layout" hidden><img src="/docs/previews/orl-layouts.png" alt="Nine actual generated commentary layouts"></div>
+<script type="module" src="/demo/main.ts"></script>
+</html>

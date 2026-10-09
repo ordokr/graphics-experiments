@@ -40,12 +40,12 @@ module.main()
 
 | Experiment | What is needed before a genuine capture |
 |---|---|
-| ASCII material | A browser renderer, glyph atlas, input textures, uniforms, and a chosen Three.js version. |
-| CRT scene | A browser host, selected screen content, required assets, and compatible Three.js setup. |
-| Bioluminescence | Missing parameter module plus browser host and compatible Three.js setup. |
-| Planet atmosphere | Missing parameter module plus browser host and compatible Three.js setup. |
-| Froxel fog | Missing grid constants plus a host scene, camera/shadow inputs, and compatible Three.js setup. |
-| Voxel pathfinding | A host that supplies a valid grid and visualizes the worker's actual returned paths. |
+| ASCII material | Inspect the supplied host's rendered glyph output in a connected browser. |
+| CRT scene | Inspect the supplied host's Julia screen; no keyboard or external media is enabled. |
+| Bioluminescence | Inspect rendering with the reconstructed preset. |
+| Planet atmosphere | Inspect rendering with the reconstructed preset. |
+| Froxel fog | Inspect actual computed depth-slice data with a WebGPU backend. |
+| Voxel pathfinding | Inspect the supplied host visualization of the actual worker's returned paths. |
 
 No browser was connected during this capture pass. These six runtime previews
 remain unavailable; generated concept art would not establish their behavior.

@@ -7,20 +7,20 @@ single app. Check permissions as described in the [README](../README.md).
 ## TypeScript graphics
 
 The rendering files import Three.js, including `three/webgpu`, `three/tsl`, and
-selected example modules. No dependency version or lockfile is supplied, so API
-compatibility with any particular Three.js release has not been established.
+selected example modules. The local viewer pins Three.js 0.186.1 and Vite 8.3.4. Its production build
+passes; browser/GPU runtime compatibility has not yet been established.
 
 | Entry point | Inputs or integration work |
 |---|---|
 | `buildAsciiMaterial(options)` in `asciiMaterial.ts` | Provide the atlas, glyph, color, source, and gradient textures, the glyph ramp, and the viewport/grid/atlas uniforms declared in `AsciiMaterialOptions`. A material alone does not create a renderer or populate those textures. |
 | `CRTScreenScene` | Supply a browser canvas and the selected screen content. Inspect its parameter interface and external media loading before choosing a source. |
-| `BioluminescenceScene` | Restore `./BioluminescenceSceneParameters`, including defaults and parameter types, before attempting a build. |
-| `PlanetScene` | Restore `./PlanetSceneParameters`, including defaults and parameter types, before attempting a build. |
-| `BoxFroxelPipeline` | Restore `../oneill-cylinder/constants`: `FROXEL_PIXEL_SIZE`, `FROXEL_SLICE_COUNT`, and `MAX_FROXEL_SLICES`. Supply the camera, fog, and shadow inputs declared by its options type. |
+| `BioluminescenceScene` | The viewer supplies a newly reconstructed `./BioluminescenceSceneParameters`; inspect the demo choices before using them elsewhere. |
+| `PlanetScene` | The viewer supplies a newly reconstructed `./PlanetSceneParameters`; inspect the demo choices before using them elsewhere. |
+| `BoxFroxelPipeline` | Vite aliases the missing upstream constants module to `demo/fog-constants.mjs`. The host provides camera and fog inputs with shadows disabled; it displays a volume depth slice, not the missing original scene. |
 
-For a future runnable demo, choose and pin a Three.js version, restore the host
-modules, supply an entry point and assets, then check initialization, resizing,
-rendering, and resource disposal in the target browser. Do not infer runtime
+The viewer supplies an entry point, generated glyph/source textures, and an
+actual-worker route visualization. Next check initialization, resizing, rendering,
+and resource disposal in the target browser. Do not infer runtime
 compatibility from the presence of WebGPU imports alone.
 
 ## Voxel pathfinding worker
@@ -65,9 +65,9 @@ Raster appearance may therefore vary between machines even with identical seeds.
 These are remaining opportunities, not implemented features:
 
 1. Establish reuse permissions and document source/asset provenance.
-2. Restore and pin the host dependencies for one small graphics demo.
+2. Visually qualify the supplied viewer on an actual browser/GPU.
 3. Add screenshots generated from that verified demo, with reproduction steps.
 4. Give the Python generator an explicit output-directory option and dependency setup.
-5. Test worker cancellation, invalid grids, and resource limits before application use.
+5. Extend the tested nonempty worker fixture to cancellation, invalid grids, and resource limits before application use.
 
-This documentation pass preserves the upstream source files unchanged.
+The viewer preserves the upstream source files unchanged; its host and reconstructed input modules are separate additions.
