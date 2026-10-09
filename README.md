@@ -1,4 +1,4 @@
-# ascii
+# Graphics experiments
 
 **A guided collection of graphics experiments: glyph rendering, CRT effects,
 atmospheres, voxel paths, and geometric page layouts.**
@@ -9,7 +9,7 @@ The source files come from upstream; this fork adds documentation and navigation
 to help readers understand what is here and where to start.
 
 It is a study collection with a local experiment viewer, not an installable graphics library. The viewer builds successfully. Four browser captures supplied by Tim V are shown below; fog and pathfinding captures remain outstanding.
-The name `ascii` describes one part of it: a shader that draws an image using
+The former name `ascii` described one part of it: a shader that draws an image using
 glyphs. The other experiments explore different visual techniques.
 
 ## Why explore it?
@@ -133,7 +133,7 @@ performance, or production-readiness claims are made by these documentation chan
 
 Original collection: [ngwnos/files](https://github.com/ngwnos/files).
 The documentation pass starts from fork commit
-[`7d471e2`](https://github.com/ordokr/ascii/tree/7d471e21bb30db6fa36b5ddaabaca8fbbe7f95fe).
+[`7d471e2`](https://github.com/ordokr/graphics-experiments/tree/7d471e21bb30db6fa36b5ddaabaca8fbbe7f95fe).
 
 No repository-wide license is present in that snapshot. Public availability is
 not a grant of reuse rights. Confirm permission with the relevant rights holders
