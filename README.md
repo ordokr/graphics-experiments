@@ -3,18 +3,18 @@
 **A guided collection of graphics experiments: glyph rendering, CRT effects,
 atmospheres, voxel paths, and geometric page layouts.**
 
-This is Tim V's annotated fork of [ngwnos/files](https://github.com/ngwnos/files).
+This is my annotated fork of [ngwnos/files](https://github.com/ngwnos/files).
 The original repository describes itself as a place to use GitHub like Pastebin.
-The source files come from upstream; this fork adds documentation and navigation
+The source files come from upstream; I add documentation and navigation
 to help readers understand what is here and where to start.
 
-It is a study collection with a local experiment viewer, not an installable graphics library. The viewer builds successfully. Four browser captures supplied by Tim V are shown below; fog and pathfinding captures remain outstanding.
+I maintain this as a study collection with a local experiment viewer, not an installable graphics library. The viewer builds successfully. I've included four browser captures below; fog and pathfinding captures remain outstanding.
 The former name `ascii` described one part of it: a shader that draws an image using
 glyphs. The other experiments explore different visual techniques.
 
 ## Why explore it?
 
-The interesting thread is **turning visual ideas into explicit machinery**:
+What interests me is **turning visual ideas into explicit machinery**:
 choosing glyphs in a shader, representing fog in a 3D grid, finding routes through
 voxel geometry, or arranging commentary around a protected central text.
 
@@ -40,7 +40,7 @@ authorship, provenance, or permission to reuse their contents.
 
 ## In action
 
-These are Tim V's captures of the local viewer in Microsoft Edge on 2026-10-09,
+I captured the local viewer in Microsoft Edge on 2026-10-09. These images are
 losslessly cropped to the visible canvas. Browser chrome and page text were
 removed; rendered pixels were not retouched, recolored, resized, or generated.
 Some canvases extended below the original viewport, so their captures show only
@@ -118,7 +118,7 @@ responsive resizing and browser/GPU compatibility remain to be qualified.
 The Python generator is independent of npm and has external dependencies and a
 fixed output path; see the reproduction notes.
 
-## What this fork adds
+## What I've added
 
 - A plain-language map of the experiments and their practical uses.
 - An integration checklist that distinguishes source snippets from runnable demos.
@@ -127,7 +127,7 @@ fixed output path; see the reproduction notes.
   Its successful build does not establish visual correctness.
 
 The rendering and pathfinding implementations remain upstream work. No visual,
-performance, or production-readiness claims are made by these documentation changes.
+performance, or production-readiness claims follow from my documentation changes.
 
 ## Attribution and permissions
 
@@ -138,7 +138,7 @@ The documentation pass starts from fork commit
 No repository-wide license is present in that snapshot. Public availability is
 not a grant of reuse rights. Confirm permission with the relevant rights holders
 before copying, modifying for redistribution, or shipping these sources or PDFs.
-This fork does not assign a license to upstream material.
+I do not assign a license to upstream material.
 
 ## Support the work
 
