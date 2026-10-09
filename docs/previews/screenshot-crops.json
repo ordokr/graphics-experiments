@@ -1,0 +1,71 @@
+{
+  "captured_by": "Tim V",
+  "capture_date": "2026-10-09",
+  "method": "Lossless rectangular crops only; no resizing, color changes, retouching, or generated pixels. Original captures remain outside the repository.",
+  "screenshots": [
+    {
+      "source_filename": "msedge_NeZ6kI5vPA.png",
+      "source_sha256": "ce7715c0664162bd46bf4b808eebf4646eef4a836f18feaf3d079d4fde455b55",
+      "output": "glyph-material.png",
+      "crop_xyxy": [
+        521,
+        534,
+        2020,
+        1346
+      ],
+      "output_size": [
+        1499,
+        812
+      ],
+      "output_sha256": "a2e244d6db73129a84bec06de385560d757c9b97886c4a8fae49c752b5e103ea"
+    },
+    {
+      "source_filename": "msedge_rGRvjbfGnO.png",
+      "source_sha256": "a9f970727924cbad4e5a2effb41f55f97b3ad49f81946230c6fb78ebeac164a7",
+      "output": "crt-display.png",
+      "crop_xyxy": [
+        521,
+        596,
+        2020,
+        1375
+      ],
+      "output_size": [
+        1499,
+        779
+      ],
+      "output_sha256": "969e26e310dc1325b0231e94bb1b1f8d58e8fc8f3065004b5e0c6b9c9e225e5f"
+    },
+    {
+      "source_filename": "msedge_aBxQIyR88u.png",
+      "source_sha256": "2be6653449463d1a7d809a3bfa2f8ea24be4abc5478ba4a284ecc9a69b90c292",
+      "output": "planet-atmosphere.png",
+      "crop_xyxy": [
+        521,
+        596,
+        2020,
+        1375
+      ],
+      "output_size": [
+        1499,
+        779
+      ],
+      "output_sha256": "502d11eb607913f1c0b06531c9ed0d3e7ead15c561b55f6c1920881f2167f9d1"
+    },
+    {
+      "source_filename": "msedge_mk0GMgrCkA.png",
+      "source_sha256": "06ffd056eb0788bed92f61e6c7016cee47b66a84e9bbb488e6b9be2e3e50ae5c",
+      "output": "bioluminescence.png",
+      "crop_xyxy": [
+        521,
+        596,
+        2020,
+        1375
+      ],
+      "output_size": [
+        1499,
+        779
+      ],
+      "output_sha256": "2e099cef60326e27972239dd1b6a19be204b09c7587facd265213f2096843beb"
+    }
+  ]
+}

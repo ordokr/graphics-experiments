@@ -36,16 +36,32 @@ module.JSON_PATH = out / "orl-layouts.json"
 module.main()
 ```
 
+## Browser captures supplied by Tim V
+
+Four screenshots were supplied from the local viewer in Microsoft Edge on
+2026-10-09, after viewer commit `7b121c2`. The screenshot alone does not identify
+the exact GPU, rendering backend, browser version, or loaded source hash.
+
+| Image | Captured route | Inputs |
+|---|---|---|
+| [glyph-material.png](glyph-material.png) | `?demo=ascii` | Generated six-glyph atlas and procedural image. |
+| [crt-display.png](crt-display.png) | `?demo=crt` | Internal Julia shader; keyboard and external media disabled. |
+| [planet-atmosphere.png](planet-atmosphere.png) | `?demo=planet` | Reconstructed demo parameters. |
+| [bioluminescence.png](bioluminescence.png) | `?demo=bioluminescence` | Reconstructed demo parameters. |
+
+Each image is a lossless rectangular crop of the visible canvas. No resize,
+color adjustment, sharpening, retouching, or generative editing was applied.
+The planet, CRT, and bioluminescence screenshots did not include the bottom of
+the full canvas; the crops retain only what was actually captured. The mouse
+pointer visible in the planet capture is retained.
+
+Original screenshots remain outside the repository. Source hashes, output hashes,
+and crop rectangles in original pixel coordinates are recorded in
+[screenshot-crops.json](screenshot-crops.json). Cropped pixel bytes were checked
+against the corresponding source regions, and all four crops were visually inspected.
+
 ## Remaining captures
 
-| Experiment | What is needed before a genuine capture |
-|---|---|
-| ASCII material | Inspect the supplied host's rendered glyph output in a connected browser. |
-| CRT scene | Inspect the supplied host's Julia screen; no keyboard or external media is enabled. |
-| Bioluminescence | Inspect rendering with the reconstructed preset. |
-| Planet atmosphere | Inspect rendering with the reconstructed preset. |
-| Froxel fog | Inspect actual computed depth-slice data with a WebGPU backend. |
-| Voxel pathfinding | Inspect the supplied host visualization of the actual worker's returned paths. |
-
-No browser was connected during this capture pass. These six runtime previews
-remain unavailable; generated concept art would not establish their behavior.
+Froxel fog and voxel pathfinding still need genuine captures. The agent's browser
+runtime remains disconnected; user-supplied frames establish only the visible
+output shown above, not independent runtime or performance qualification.

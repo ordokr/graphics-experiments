@@ -8,7 +8,7 @@ The original repository describes itself as a place to use GitHub like Pastebin.
 The source files come from upstream; this fork adds documentation and navigation
 to help readers understand what is here and where to start.
 
-It is a study collection with a local experiment viewer, not an installable graphics library. The viewer builds successfully; browser rendering and the six remaining captures are still unverified.
+It is a study collection with a local experiment viewer, not an installable graphics library. The viewer builds successfully. Four browser captures supplied by Tim V are shown below; fog and pathfinding captures remain outstanding.
 The name `ascii` describes one part of it: a shader that draws an image using
 glyphs. The other experiments explore different visual techniques.
 
@@ -38,7 +38,44 @@ content sharing a page.
 Two PDFs are also retained from upstream. Their filenames alone do not establish
 authorship, provenance, or permission to reuse their contents.
 
-## In action: geometric page layouts
+## In action
+
+These are Tim V's captures of the local viewer in Microsoft Edge on 2026-10-09,
+losslessly cropped to the visible canvas. Browser chrome and page text were
+removed; rendered pixels were not retouched, recolored, resized, or generated.
+Some canvases extended below the original viewport, so their captures show only
+the visible portion. These demonstrate the captured frames, not cross-browser
+or performance qualification.
+
+### Glyph material
+
+![Procedural image rendered as a spiral of pale cyan and green glyphs](docs/previews/glyph-material.png)
+
+The retained glyph shader renders a procedural source image through a generated
+six-character atlas. Shader implementation: upstream; demo textures and host: this fork.
+
+### CRT display
+
+![Julia fractal displayed through a curved CRT with colored phosphor and bloom effects](docs/previews/crt-display.png)
+
+The retained CRT scene displays its internal Julia shader. Keyboard, ROM, and
+external-media loading are disabled in this demo.
+
+### Planet atmosphere
+
+![Purple planetary disk surrounded by a soft atmospheric halo](docs/previews/planet-atmosphere.png)
+
+The retained planet scene using newly reconstructed demo parameters. These
+parameters are not recovered upstream defaults.
+
+### Bioluminescence
+
+![Cluster of small blue-green luminous particles against a dark background](docs/previews/bioluminescence.png)
+
+The retained bioluminescence scene using newly reconstructed demo parameters.
+The original dark exposure is preserved.
+
+### Geometric page layouts
 
 ![Nine generated page layouts with a central white content area surrounded by colored annotation regions](docs/previews/orl-layouts.png)
 
@@ -49,10 +86,9 @@ See the [capture and reproduction notes](docs/previews/README.md),
 [vector output](docs/previews/orl-layouts.svg), and
 [layout data](docs/previews/orl-layouts.json).
 
-The other six experiments do not yet have verified captures in this fork.
-A local browser host and reconstructed inputs are now supplied, but still need
-visual verification in a supported browser. No substitute images
-are presented as screenshots of those implementations.
+Froxel fog and voxel pathfinding do not yet have captures in this fork. Their
+hosts are supplied, but visual acceptance remains open. See the
+[capture provenance](docs/previews/README.md) for the scope of the available evidence.
 
 ## Start here
 
