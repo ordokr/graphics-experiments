@@ -38,6 +38,22 @@ content sharing a page.
 Two PDFs are also retained from upstream. Their filenames alone do not establish
 authorship, provenance, or permission to reuse their contents.
 
+## In action: geometric page layouts
+
+![Nine generated page layouts with a central white content area surrounded by colored annotation regions](docs/previews/orl-layouts.png)
+
+Actual output from `orl_clean_band_generator.py`: nine seeded arrangements of
+main content, glosses, sources, disputes, and outer reference material. These
+are geometric regions, not pages of typeset text. The source is upstream work.
+See the [capture and reproduction notes](docs/previews/README.md),
+[vector output](docs/previews/orl-layouts.svg), and
+[layout data](docs/previews/orl-layouts.json).
+
+The other six experiments do not yet have verified captures in this fork.
+The graphics snippets need a browser host (and several need missing modules);
+the pathfinding worker needs a host and a visualization. No substitute images
+are presented as screenshots of those implementations.
+
 ## Start here
 
 1. Pick one technique from the table; the files are not one application.
